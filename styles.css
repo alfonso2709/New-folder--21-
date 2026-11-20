@@ -1,0 +1,945 @@
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #f5f0e7;
+  color: #283328;
+  font-family: "DM Sans", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, select {
+  font: inherit;
+}
+
+.announcement {
+  height: 34px;
+  background: #29382c;
+  color: #f4ead7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.site-header {
+  height: 82px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f5f0e7;
+  position: relative;
+  z-index: 10;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.brand-mark {
+  width: 35px;
+  height: 35px;
+  border: 1px solid #a76b46;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font: italic 24px Georgia;
+  color: #a76b46;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: #b36e45;
+}
+
+.nav-cta {
+  padding: 13px 17px;
+  border: 1px solid #c8bba8;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  font-size: 24px;
+}
+
+.hero {
+  min-height: 650px;
+  height: 78vw;
+  max-height: 760px;
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+  background: url("https://images.unsplash.com/photo-1545601445-6d8a0a4e2d2a?auto=format&fit=crop&w=2000&q=85") center/cover;
+  animation: heroZoom 16s ease-out forwards;
+}
+
+.hero-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(20,31,23,.82),
+    rgba(28,37,28,.55),
+    rgba(26,32,24,.05)
+  );
+}
+
+.hero-content {
+  position: absolute;
+  left: 12%;
+  top: 17%;
+  max-width: 590px;
+  animation: rise .9s both;
+}
+
+.eyebrow {
+  font-size: 9px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #a36d4a;
+  margin-bottom: 22px;
+}
+
+.light {
+  color: #e0bc8a;
+}
+
+.hero h1 {
+  font: 500 clamp(48px, 6vw, 82px)/1.02 "Playfair Display", Georgia, serif;
+  letter-spacing: -2.5px;
+  margin: 0;
+}
+
+.hero h1 em,
+h2 em {
+  color: #d5a16f;
+}
+
+.hero-copy {
+  max-width: 400px;
+  font-size: 14px;
+  line-height: 1.9;
+  color: #e8e1d6;
+  margin: 26px 0 30px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.button {
+  border: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 16px 20px;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .2s;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+.button-cream {
+  background: #f3e9d9;
+  color: #29382c;
+}
+
+.text-link {
+  font-size: 10px;
+  font-weight: 700;
+  border-bottom: 1px solid;
+  padding-bottom: 7px;
+}
+
+.light-link {
+  color: white;
+}
+
+.hero-stamp {
+  position: absolute;
+  right: 8%;
+  bottom: 45px;
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 88px;
+  height: 88px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  line-height: 1.6;
+}
+
+.section-wrap {
+  padding-left: 12%;
+  padding-right: 12%;
+}
+
+.intro {
+  padding-top: 110px;
+  padding-bottom: 105px;
+}
+
+.intro-main {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 8%;
+  align-items: end;
+}
+
+.intro h2,
+.section-heading h2,
+.planner-heading h2 {
+  font: 500 clamp(42px, 5vw, 65px)/1.05 "Playfair Display", serif;
+  color: #29382c;
+}
+
+.intro h2 em,
+.section-heading h2 em,
+.planner-heading h2 em {
+  color: #a86e4c;
+}
+
+.intro-text p,
+.section-heading > p,
+.planner-heading > p {
+  font-size: 13px;
+  line-height: 1.9;
+  color: #687064;
+}
+
+.values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+  margin-top: 85px;
+  border-top: 1px solid #d9d0c2;
+  padding-top: 28px;
+}
+
+.value-icon {
+  font-size: 24px;
+  color: #b57a50;
+}
+
+.values h3 {
+  font: 500 20px "Playfair Display", serif;
+}
+
+.values p {
+  font-size: 11px;
+  color: #777d70;
+}
+
+/* TRADITIONS */
+
+.ritual-band {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #29382c;
+  color: #f4ead7;
+}
+
+.ritual-photo {
+  background: url("https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1200&q=85") center/cover;
+  min-height: 590px;
+}
+
+.ritual-copy {
+  padding: 82px 13%;
+  align-self: center;
+}
+
+.ritual-copy h2,
+.gratitude-copy h2 {
+  font: 500 clamp(42px, 5vw, 63px)/1.05 "Playfair Display", serif;
+}
+
+.ritual-list {
+  border-top: 1px solid #566154;
+}
+
+.ritual-list > div {
+  display: flex;
+  gap: 18px;
+  padding: 16px 0;
+  border-bottom: 1px solid #566154;
+}
+
+.ritual-list > div > span {
+  color: #d8a56f;
+}
+
+.ritual-list b {
+  font: 500 17px "Playfair Display", serif;
+}
+
+.ritual-list small {
+  display: block;
+  font-size: 10px;
+  color: #b8c0b2;
+  margin-top: 5px;
+}
+
+/* MENU */
+
+.menu-section {
+  padding-top: 110px;
+  padding-bottom: 110px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 45px;
+}
+
+.section-heading > p {
+  max-width: 270px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 20px;
+}
+
+.dish-card {
+  background: #eee7db;
+  transition: transform .3s, box-shadow .3s;
+}
+
+.dish-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px #423c2a18;
+}
+
+.dish-image {
+  height: 235px;
+  background-size: cover;
+  background-position: center;
+}
+
+.featured-dish .dish-image {
+  height: 275px;
+}
+
+.turkey {
+  background-image: url("https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?auto=format&fit=crop&w=900&q=85");
+}
+
+.sides {
+  background-image: url("https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=900&q=85");
+}
+
+.pie {
+  background-image: url("https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85");
+}
+
+.dish-info {
+  padding: 24px;
+}
+
+.dish-type {
+  font-size: 8px;
+  letter-spacing: 1.6px;
+  color: #a36d4a;
+  font-weight: 700;
+}
+
+.dish-info h3 {
+  font: 500 23px "Playfair Display", serif;
+}
+
+.dish-info p {
+  font-size: 11px;
+  line-height: 1.7;
+  color: #73786d;
+}
+
+.recipe-button {
+  border: 0;
+  border-bottom: 1px solid #bcae9a;
+  background: none;
+  padding: 8px 0;
+  cursor: pointer;
+  color: #344333;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.menu-footnote {
+  text-align: center;
+  font: italic 15px "Playfair Display", serif;
+  color: #8c826f;
+  margin-top: 35px;
+}
+
+/* GRATITUDE GARDEN */
+
+.gratitude-section {
+  background: #b16f4b;
+  color: white;
+  padding: 100px 12%;
+}
+
+.gratitude-inner {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 9%;
+  align-items: center;
+}
+
+.gratitude-copy h2 em {
+  color: #f3d7ad;
+}
+
+.gratitude-copy > p {
+  font-size: 12px;
+  line-height: 1.9;
+  color: #f2dfd2;
+}
+
+.gratitude-copy form {
+  margin-top: 36px;
+}
+
+.gratitude-copy label {
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+
+.gratitude-entry {
+  display: flex;
+  border-bottom: 1px solid #e6c2a8;
+}
+
+.gratitude-entry input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: white;
+  padding: 13px 0;
+  outline: 0;
+  font-size: 11px;
+}
+
+.gratitude-entry input::placeholder {
+  color: #f1d6c6;
+}
+
+.gratitude-entry button {
+  border: 0;
+  background: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.garden-wrap {
+  background: #f4eadb;
+  color: #344132;
+  padding: 23px;
+  box-shadow: 15px 15px 0 #8d553b;
+}
+
+.garden-top,
+.garden-bottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #8b795f;
+}
+
+.garden-wall {
+  min-height: 260px;
+  padding: 24px 8px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  gap: 12px;
+}
+
+.empty-garden {
+  text-align: center;
+  align-self: center;
+  color: #a79b87;
+}
+
+.empty-garden span {
+  font-size: 32px;
+  color: #b77a50;
+}
+
+.empty-garden p {
+  font: italic 16px "Playfair Display", serif;
+}
+
+.gratitude-note {
+  width: calc(50% - 8px);
+  min-height: 80px;
+  padding: 13px;
+  background: #e9ddca;
+  color: #59604f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font: italic 14px "Playfair Display", serif;
+  transform: rotate(var(--tilt));
+  animation: notePop .45s both;
+}
+
+.gratitude-note:nth-child(3n) {
+  background: #dce0d0;
+}
+
+.gratitude-note:nth-child(3n+1) {
+  background: #f0d8c3;
+}
+
+/* GATHERING PLANNER */
+
+.planner {
+  padding-top: 110px;
+  padding-bottom: 115px;
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 9%;
+}
+
+.planner-card {
+  background: #eee7db;
+  padding: 32px 36px;
+}
+
+.planner-step {
+  display: flex;
+  justify-content: space-between;
+  color: #9a6b4d;
+  font-size: 8px;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  border-bottom: 1px solid #d8cbbb;
+  padding-bottom: 17px;
+  margin-bottom: 26px;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.field {
+  margin-bottom: 25px;
+}
+
+.field label {
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #c9bda9;
+  background: transparent;
+  padding: 10px 0;
+  color: #3b493b;
+  font-size: 12px;
+}
+
+.mood-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.mood-option {
+  position: relative;
+  border: 1px solid #d4c8b7;
+  padding: 13px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.mood-option input {
+  position: absolute;
+  opacity: 0;
+}
+
+.mood-option:has(input:checked) {
+  border-color: #a96f4b;
+  background: #f7efe4;
+}
+
+.mood-option span {
+  font-size: 20px;
+}
+
+.mood-option b {
+  font-size: 9px;
+}
+
+.button-green {
+  background: #29382c;
+  color: #f5ead9;
+  margin-top: 8px;
+}
+
+.plan-result {
+  margin-top: 24px;
+  border-top: 1px solid #d4c8b7;
+  padding-top: 20px;
+  animation: rise .4s both;
+}
+
+.plan-result h3 {
+  font: 500 22px "Playfair Display", serif;
+}
+
+.plan-result p,
+.plan-result li {
+  font-size: 11px;
+  line-height: 1.8;
+  color: #596254;
+}
+
+/* CLOSING */
+
+.closing {
+  background: #29382c;
+  color: #f4ead7;
+  text-align: center;
+  padding: 92px 20px 25px;
+}
+
+.closing-art {
+  font-size: 27px;
+  color: #d5a16f;
+  margin-bottom: 25px;
+  animation: slowSpin 18s linear infinite;
+}
+
+.closing h2 {
+  font: 500 clamp(48px, 6vw, 72px)/1.05 "Playfair Display", serif;
+}
+
+.closing > p {
+  max-width: 430px;
+  margin: 24px auto 28px;
+  color: #c2c9bb;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.closing-bottom {
+  border-top: 1px solid #53614f;
+  margin-top: 90px;
+  padding-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  color: #aeb8a8;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 7%;
+  background: #f5f0e7;
+  color: #858777;
+  font-size: 9px;
+}
+
+/* RECIPE MODAL */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: #172018bd;
+}
+
+.modal-card {
+  position: relative;
+  background: #f5f0e7;
+  color: #344133;
+  width: min(560px, 100%);
+  padding: 42px;
+  animation: rise .3s both;
+}
+
+.modal-close {
+  position: absolute;
+  right: 18px;
+  top: 12px;
+  border: 0;
+  background: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.modal-card h2 {
+  font: 500 36px "Playfair Display", serif;
+}
+
+.modal-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #d8cbbb;
+}
+
+.modal-details b {
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  color: #a36d4a;
+}
+
+.modal-details li,
+.modal-details p {
+  font-size: 11px;
+  line-height: 1.9;
+  color: #5f685a;
+}
+
+/* ANIMATIONS */
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroZoom {
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes slowSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes notePop {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(var(--tilt));
+  }
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 900px) {
+  .section-wrap {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+
+  .hero-content {
+    left: 8%;
+  }
+
+  .menu-grid {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 650px) {
+  .site-header {
+    height: 68px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: #f5f0e7;
+    padding: 20px 7%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  .hero {
+    height: 700px;
+  }
+
+  .hero-content {
+    left: 7%;
+    right: 7%;
+    top: 16%;
+  }
+
+  .hero h1 {
+    font-size: 62px;
+  }
+
+  .hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .intro-main,
+  .ritual-band,
+  .gratitude-inner,
+  .planner {
+    grid-template-columns: 1fr;
+  }
+
+  .values {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .ritual-photo {
+    min-height: 300px;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dish-image,
+  .featured-dish .dish-image {
+    height: 230px;
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  .gratitude-section {
+    padding: 75px 7%;
+  }
+
+  .planner {
+    gap: 35px;
+  }
+
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+
+  .closing-bottom {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  footer {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .modal-details {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
